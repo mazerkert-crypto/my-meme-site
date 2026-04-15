@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мемный уголок</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .meme-card {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 32px;
+            padding: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s ease;
+        }
+
+        .meme-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .meme-image {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background: #f0f0f0;
+            min-height: 300px;
+            object-fit: contain;
+        }
+
+        .meme-text {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #555;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 16px;
+        }
+
+        .refresh-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .refresh-btn:hover {
+            opacity: 0.9;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="meme-card">
+        <h1>🎭 Мем дня</h1>
+        <img id="memeImage" class="meme-image" src="" alt="Мем">
+        <div class="meme-text" id="memeText">
+            Загружаю мем...
+        </div>
+        <button class="refresh-btn" onclick="loadMeme()">🔄 Новый мем</button>
+        <div class="footer">
+            🔒 Сайт защищён SSL-сертификатом
+        </div>
+    </div>
+
+    <script>
+        // Массив с мемами (можешь добавить свои картинки)
+        const memes = [
+            {
+                image: "style/images/токсис.jpg",
+                text: "Возьми телефон детка! 🎵"
+            },
+            {
+                image: "style/images/бомж.jpg",
+                text: "Когда сдал практику досрочно 🕺"
+            },
+            {
+                image: "style/images/ждун.jpg",
+                text: "Жду, когда защитят сайт 🔐"
+            }
+        ];
+
+        function loadMeme() {
+            const randomIndex = Math.floor(Math.random() * memes.length);
+            const meme = memes[randomIndex];
+            
+            const imgElement = document.getElementById('memeImage');
+            const textElement = document.getElementById('memeText');
+            
+            imgElement.src = meme.image;
+            textElement.innerHTML = meme.text;
+        }
+
+        // Загружаем первый мем при открытии страницы
+        loadMeme();
+    </script>
+</body>
+</html>
