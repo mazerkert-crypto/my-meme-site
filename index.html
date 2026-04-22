@@ -12,7 +12,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #000000 100%);
             font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             min-height: 100vh;
             display: flex;
@@ -28,11 +28,6 @@
             border-radius: 32px;
             padding: 24px;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            transition: transform 0.2s ease;
-        }
-
-        .meme-card:hover {
-            transform: translateY(-5px);
         }
 
         h1 {
@@ -91,14 +86,14 @@
 </head>
 <body>
     <div class="meme-card">
-        <h1>🎭 Мем дня</h1>
+        <h1>Мем дня</h1>
         <img id="memeImage" class="meme-image" src="" alt="Мем">
         <div class="meme-text" id="memeText">
             Загружаю мем...
         </div>
-        <button class="refresh-btn" onclick="loadMeme()">🔄 Новый мем</button>
+        <button class="refresh-btn" onclick="loadMeme()">Новый мем</button>
         <div class="footer">
-            🔒 Сайт защищён SSL-сертификатом
+            Сайт защищён SSL-сертификатом
         </div>
     </div>
 
@@ -107,15 +102,15 @@
         const memes = [
             {
                 image: "style/images/токсис.jpg",
-                text: "Возьми телефон детка! 🎵"
+                text: "Возьми телефон детка!"
             },
             {
                 image: "style/images/бомж.jpg",
-                text: "Когда сдал практику досрочно 🕺"
+                text: "Когда сдал практику досрочно"
             },
             {
                 image: "style/images/ждун.jpg",
-                text: "Жду, когда защитят сайт 🔐"
+                text: "Жду, когда защитят сайт"
             }
         ];
 
